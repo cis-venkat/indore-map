@@ -1,8 +1,8 @@
 class CreateBoundaries < ActiveRecord::Migration
   def change
     create_table :boundaries do |t|
-      t.decimal :longitude, precision: 15, scale: 30
-      t.decimal :latitude, precision: 15, scale: 30
+      t.float :longitude
+      t.float :latitude
       t.integer :location_id
 
       t.timestamps
