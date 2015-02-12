@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212082943) do
+ActiveRecord::Schema.define(version: 20150212161615) do
 
   create_table "boundaries", force: true do |t|
-    t.decimal  "longitude",   precision: 15, scale: 30
-    t.decimal  "latitude",    precision: 15, scale: 30
+    t.float    "longitude",   limit: 15
+    t.float    "latitude",    limit: 15
     t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
