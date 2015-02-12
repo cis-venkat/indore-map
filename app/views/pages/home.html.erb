@@ -1,6 +1,15 @@
 <% title("Home Page") %>
 <h1>Google Maps</h1>
 
+<div class="pull-right">
+<% Location.all.each do |location| %>
+  <%= check_box_tag location.id %>
+  <%= label_tag location.name.downcase %>
+  <%= hidden_field_tag "color_#{location.id}", location.color %>
+  <%= hidden_field_tag "boundaries_#{location.id}", location.to_json(:include => :boundaries) %>
+<% end %>
+</div>
+
 <div id="map-container">
 	<div id="map-canvas"></div>
 </div>
